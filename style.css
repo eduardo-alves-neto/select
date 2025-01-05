@@ -1,0 +1,134 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: sans-serif;
+}
+
+.container {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-wrap: wrap;
+  background: #f1f1f1;
+}
+
+.select-viewJson pre code {
+  font-size: large;
+}
+
+.dropdown {
+  min-width: 15rem;
+  position: relative;
+}
+
+.select {
+  background: transparent;
+  color: black;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border: 1px solid #3f3f3f;
+  border-radius: 8px;
+  padding: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.select-clicked {
+  border: 1px solid #606461;
+  box-shadow: 0 0 0.8rem #a3a4a3;
+}
+
+.select:hover {
+  background-color: #e8e5e5b7;
+}
+
+.caret {
+  width: 0;
+  height: 0;
+  border-bottom: 5px solid transparent;
+  border-top: 5px solid transparent;
+  border-left: 6px solid #000000;
+  transition: 0.3s;
+}
+
+.caret-rotate {
+  transform: rotate(90deg);
+}
+
+.menu {
+  list-style: none;
+  padding: 0em 0.5em;
+  background-color: #ded8d8b7;
+  box-shadow: 0 0.5em 1em rgb(0, 0, 0, 0.2);
+  border-radius: 0.5em;
+  color: #000000;
+  position: absolute;
+  top: 3.4em;
+  left: 0;
+  width: 100%;
+  height: 0;
+  transition: 300ms cubic-bezier(0, 77, 0, 0.18, 1);
+  z-index: 1;
+  overflow-y: scroll;
+}
+
+.menu::-webkit-scrollbar {
+  width: 8px;
+}
+
+.menu::-webkit-scrollbar-track {
+  background-color: #959494;
+}
+
+.menu::-webkit-scrollbar-thumb {
+  background-color: #727272;
+}
+
+.menu::-webkit-scrollbar-thumb:hover {
+  background-color: #9e9e9e;
+}
+
+.menu li {
+  padding: 0.7em;
+  margin: 0.3em 0;
+  border-radius: 0.5em;
+  cursor: pointer;
+  user-select: none;
+}
+
+.menu li:hover {
+  background-color: #afaeaead;
+}
+
+.active {
+  background-color: #b5b5b5;
+  color: #000000;
+}
+
+.text-fade-in {
+  animation: textFade 300ms ease-out;
+}
+
+.menu-open {
+  border: 1px #383838 solid;
+  height: 15em;
+}
+
+@keyframes textFade {
+  0% {
+    transform: translateX(-1em);
+    opacity: 0;
+  }
+
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
